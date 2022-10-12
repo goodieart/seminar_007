@@ -1,12 +1,14 @@
 ﻿using Lib;
 using static System.Console;
 
-int[,] matrix = Arrays.Create2DArrayInt32(4, 3);
+Write("Введите размерности m, n: ");
+int[] arg = Parser.GetUserInput(",");
 
-Arrays.Print2DArray(matrix);
+int[,] matrix = Arrays.Create2DArrayInt32(arg[0], arg[1]);
+Arrays.PrintArray(matrix);
 
 Write("Введите строку, столбец: ");
-int[] arg = Parser.GetUserInput(",");
+arg = Parser.GetUserInput(",");
 
 if (arg[0] >= matrix.GetLength(0)
     || arg[0] < 0
@@ -16,7 +18,4 @@ if (arg[0] >= matrix.GetLength(0)
     WriteLine($"Элемент с индексами [{arg[0]}, {arg[1]}] отсутствует в массиве");
     return;
 }
-else
-{
-    WriteLine(matrix[arg[0], arg[1]]);
-}
+else WriteLine(matrix[arg[0], arg[1]]);
