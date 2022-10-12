@@ -1,4 +1,4 @@
-﻿using lib;
+﻿using Lib;
 
 Console.Write("Введите размерности m, n: ");
 int[] arg = Parser.GetUserInput(",");
